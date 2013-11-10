@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Posts2Maps</string>
+    <string name="btn_positive">Yes</string>
+    <string name="btn_negative">OK</string>
+    <string name="title_iconnect">Internet Connection</string>
+    <string name="title_idisonnect">NO Internet Connection</string>
+    <string name="msg_iconnect">You have internet connection.</string>
+    <string name="msg_idisconnect">You don\'t have internet connection.</string>
 </resources>

@@ -10,17 +10,17 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import com.wordpress.zanyxdev.Posts2Maps.IAsyncResponse;
 
-/**
- * Usage ConnectionDetector cDetectTask = new MyCustomTask(context);
- * task.execute(..);
- */
-public class ConnectionDetector extends AsyncTask<Void, Void, Boolean> {
+
+public class ConnectionDetectorTask extends AsyncTask<Void, Void, Boolean> {
     private Context mContext;
+    public IAsyncResponse iAsyncResponse=null;
     private String LOG_TAG = "Posts2Map::".concat(getClass().getSimpleName());
 
-    public ConnectionDetector(Context context) {
-        mContext = context;
+    public ConnectionDetectorTask(Context context) {
+        this.mContext = context;
+
     }
 
     @Override
@@ -60,6 +60,7 @@ public class ConnectionDetector extends AsyncTask<Void, Void, Boolean> {
     protected void onPostExecute(Boolean result) {
         Log.v(LOG_TAG, "onPostExecute result:".concat(result.toString()));
         super.onPostExecute(result);
+        iAsyncResponse.processFinish(result);
     }
 
 }
